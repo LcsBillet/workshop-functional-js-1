@@ -12,9 +12,9 @@ var promiseStrings = new Promise(function (fulfill, reject) {
 })
 
 const asyncYolo = (input) => {
-
-  // Your future job begins here ...
-
+  _.zipWith(promiseNumbers, promiseStrings.filter(val => typeof val == 'number'), function(a, b) {
+    return a + b;
+  });
 }
 
 module.exports = {
